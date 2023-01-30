@@ -7,7 +7,7 @@
         .then(data => {
           let parser = new DOMParser();
           let doc = parser.parseFromString(data, "text/html");
-          let element = doc.querySelector("body");
+          let element = doc.querySelector("html");
           document.querySelector(targetSelector).innerHTML = element.innerHTML;
         });
       }
@@ -17,9 +17,9 @@
           include(filepath="https://jsonplaceholder.typicode.com/posts", targetSelector="#content")
       });
 </script>
-<html lang="en">
+<html lang="en" id="content">
     <head>
         <title>title to replace</title>
     </head>
-    <body id="content">I will be replaced</body>
+    <body >I will be replaced</body>
 </html>
